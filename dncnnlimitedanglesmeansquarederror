@@ -86,9 +86,9 @@ model.save_weights('dncnn_model.weights.h5')
 
 # Print model summary
 model.summary()
-noisy_dir2 = '/mmfs1/gscratch/uwb/CT_images/RECONS2024/60views' 
+noisy_dir2 = '/mmfs1/gscratch/uwb/vdhaya/meansquarelimitedloss/output' 
 # Process each image in the noisy directory
-for i, image_path in enumerate(sorted(glob(os.path.join(noisy_dir, '*.flt'))[:100])):
+for i, image_path in enumerate(sorted(glob(os.path.join(noisy_dir2, '*.flt'))[:100])):
     # Preprocess the test image
     test_image = read_flt_file(image_path, image_shape)
     test_image = np.expand_dims(test_image, axis=(0, -1))  # Add batch and channel dimensions
